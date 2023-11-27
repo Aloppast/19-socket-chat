@@ -8,6 +8,8 @@ const usuarios = new Usuarios();
 io.on('connection', (client) => {
 
     client.on('entrarChat', (data, callback) => {
+        console.log(data.nombre);
+        console.log(data.sala);
         if (!data.nombre || !data.sala) {
             return callback({
                 error: true,
